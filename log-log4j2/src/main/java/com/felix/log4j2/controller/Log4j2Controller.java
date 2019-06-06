@@ -1,17 +1,12 @@
-package com.example.log4j2.controller;
+package com.felix.log4j2.controller;
 
 
-import com.example.log4j2.config.WechatMpProperties;
+import com.felix.log4j2.config.WechatMpProperties;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.PropertySource;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.annotation.Resource;
 
 @RestController
 public class Log4j2Controller {

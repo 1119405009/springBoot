@@ -1,4 +1,4 @@
-package com.example.log4j2.config;
+package com.felix.log4j2.config;
 
 
 
