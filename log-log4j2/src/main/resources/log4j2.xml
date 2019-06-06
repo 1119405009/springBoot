@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 设置log4j2的自身log级别为warn -->
+<!-- OFF > FATAL > ERROR > WARN > INFO > DEBUG > TRACE > ALL -->
+<configuration status="OFF" monitorInterval="30">
+  <appenders>
+    <console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </console>
+    <RollingFile name="wechat" fileName="logs/wechat/message.log" filePattern="logs/wechat/$${date:yyyy-MM}/message-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="lockTicket" fileName="logs/ticket/lock.log" filePattern="logs/ticket/$${date:yyyy-MM}/lock-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="commit" fileName="logs/ticket/commit.log" filePattern="logs/ticket/$${date:yyyy-MM}/commit-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="refundTicket" fileName="logs/ticket/refund.log" filePattern="logs/ticket/$${date:yyyy-MM}/refund-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="insuranceCreate" fileName="logs/insurance/create.log" filePattern="logs/insurance/$${date:yyyy-MM}/create-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="insuranceCancel" fileName="logs/insurance/cancel.log" filePattern="logs/insurance/$${date:yyyy-MM}/cancel-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="payNotify" fileName="logs/pay/notify.log" filePattern="logs/pay/$${date:yyyy-MM}/notify-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="payCreate" fileName="logs/pay/create.log" filePattern="logs/pay/$${date:yyyy-MM}/create-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="payCancel" fileName="logs/pay/cancel.log" filePattern="logs/pay/$${date:yyyy-MM}/cancel-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="payRefund" fileName="logs/pay/refund.log" filePattern="logs/pay/$${date:yyyy-MM}/refund-%d{yyyy-MM-dd}-%i.log">
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+    </RollingFile>
+    <RollingFile name="RollingFileInfo" fileName="logs/info.log"
+                 filePattern="logs/$${date:yyyy-MM}/info-%d{yyyy-MM-dd}-%i.log">
+      <!--控制台只输出level及以上级别的信息（onMatch），其他的直接拒绝（onMismatch）-->
+      <Filters>
+        <ThresholdFilter level="INFO"/>
+        <ThresholdFilter level="WARN" onMatch="DENY" onMismatch="NEUTRAL"/>
+      </Filters>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+    </RollingFile>
+
+    <RollingFile name="RollingFileWarn" fileName="logs/warn.log"
+                 filePattern="logs/$${date:yyyy-MM}/warn-%d{yyyy-MM-dd}-%i.log">
+      <Filters>
+        <ThresholdFilter level="WARN"/>
+        <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="NEUTRAL"/>
+      </Filters>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+    </RollingFile>
+
+    <RollingFile name="RollingFileError" fileName="logs/error.log"
+                 filePattern="logs/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log">
+      <ThresholdFilter level="ERROR"/>
+      <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [%p] - %l - %m%n"/>
+      <Policies>
+        <TimeBasedTriggeringPolicy/>
+        <SizeBasedTriggeringPolicy size="10 MB"/>
+      </Policies>
+    </RollingFile>
+  </appenders>
+
+  <loggers>
+    <!--系统根目录${sys:user.home}-->
+    <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
+    <logger name="org.springframework" level="INFO"></logger>
+    <logger name="org.mybatis" level="INFO"></logger>
+    <logger name="insuranceCreate" level="ERROR" >
+      <appender-ref ref="insuranceCreate"/>
+    </logger>
+    <logger name="insuranceCancel" level="ERROR" >
+      <appender-ref ref="insuranceCancel"/>
+    </logger>
+    <logger name="payNotify" level="ERROR" >
+      <appender-ref ref="payNotify"/>
+    </logger>
+    <logger name="payCreate" level="ERROR" >
+      <appender-ref ref="payCreate"/>
+    </logger>
+    <logger name="payCancel" level="ERROR" >
+      <appender-ref ref="payCancel"/>
+    </logger>
+    <logger name="payRefund" level="ERROR" >
+      <appender-ref ref="payRefund"/>
+    </logger>
+    <logger name="commit" level="ERROR" >
+      <appender-ref ref="commit"/>
+    </logger>
+    <logger name="lockTicket" level="ERROR" >
+      <appender-ref ref="lockTicket"/>
+    </logger>
+    <logger name="refundTicket" level="ERROR" >
+      <appender-ref ref="refundTicket"/>
+    </logger>
+    <logger name="wechat" level="ERROR" >
+      <appender-ref ref="wechat"/>
+    </logger>
+    <root level="debug">
+      <appender-ref ref="Console"/>
+      <appender-ref ref="RollingFileInfo"/>
+      <appender-ref ref="RollingFileWarn"/>
+      <appender-ref ref="RollingFileError"/>
+    </root>
+  </loggers>
+
+</configuration>

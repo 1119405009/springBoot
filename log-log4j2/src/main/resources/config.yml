@@ -1,0 +1,14 @@
+business:
+  config:
+    wechat:
+      mp:
+        wechat:    微信App
+        lockTicket:  锁票
+        commit:    提交
+        refundTicket:     退票
+        insuranceCreate:  保险创建
+        insuranceCancel:  保险取消
+        payNotify: 支付回调
+        payCreate: 支付创建
+        payCancel: 支付取消
+        payRefund: 支付退钱
