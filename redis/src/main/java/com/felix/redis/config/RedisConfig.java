@@ -21,6 +21,7 @@ import java.io.Serializable;
 @EnableCaching
 public class RedisConfig {
 
+
     /**
      * 默认情况下的模板只能支持RedisTemplate<String, String>，也就是只能存入字符串，因此支持序列化
      */
