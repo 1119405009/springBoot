@@ -26,6 +26,7 @@ public class TaskConfig implements SchedulingConfigurer {
         taskRegistrar.setScheduler(taskExecutor());
     }
 
+
     /**
      * 这里等同于配置文件配置
      * {@code spring.task.scheduling.pool.size=20} - Maximum allowed number of threads.
