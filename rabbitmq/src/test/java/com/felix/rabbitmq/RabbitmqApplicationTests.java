@@ -1,4 +1,4 @@
-package com.felix.docker;
+package com.felix.rabbitmq;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DockerApplicationTests {
+public class RabbitmqApplicationTests {
 
     @Test
     public void contextLoads() {
     }
+
+
+
 
 }
