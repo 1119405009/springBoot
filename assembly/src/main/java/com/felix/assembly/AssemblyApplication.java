@@ -1,13 +1,15 @@
-package com.felix.docker;
+package com.felix.assembly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 @SpringBootApplication
-public class DockerApplication {
+public class AssemblyApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DockerApplication.class, args);
+        SpringApplication.run(AssemblyApplication.class, args);
     }
 
 }
