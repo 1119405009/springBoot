@@ -7,10 +7,10 @@
         <artifactId>parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>log4j2</artifactId>
+    <groupId>com.felix</groupId>
+    <artifactId>log-log4j2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>log4j2</name>
+    <name>log-log4j2</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
