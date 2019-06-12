@@ -3,8 +3,6 @@ package com.felix.springjpa.service.impl;
 
 import com.felix.springjpa.dao.BaseDao;
 import com.felix.springjpa.service.BaseService;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 
 import java.io.Serializable;
 

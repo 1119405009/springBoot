@@ -75,11 +75,9 @@ public class AopLog {
     public void afterReturning() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = Objects.requireNonNull(attributes).getRequest();
-
         Long start = (Long) request.getAttribute(START_TIME);
         Long end = System.currentTimeMillis();
         log.info("【请求耗时】：{}毫秒", end - start);
-
         String header = request.getHeader("User-Agent");
         UserAgent userAgent = UserAgent.parseUserAgentString(header);
         log.info("【浏览器类型】：{}，【操作系统】：{}，【原始User-Agent】：{}", userAgent.getBrowser().toString(), userAgent.getOperatingSystem().toString(), header);

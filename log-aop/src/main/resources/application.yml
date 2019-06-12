@@ -2,3 +2,8 @@ server:
   port: 8080
   servlet:
     context-path: /demo
+
+logging:
+  level:
+    root : INFO
+  path: C:/build/log
