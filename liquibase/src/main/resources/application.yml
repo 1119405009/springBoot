@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    name: mysql
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      filter: stat
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1/liquibase?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+      username: root
+      password: 123456
+      initial-size: 6
+      min-idle: 2
+      max-active: 700
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-pool-prepared-statement-per-connection-size: 20
+
+  liquibase:
+    change-log: classpath:db/${spring.profiles.active:dev}/db.changelog-master.yaml
+    check-change-log-location: false
+
+  profiles:
+    active: dev
+

@@ -1,0 +1,8 @@
+databaseChangeLog:
+- changeSet:
+    id: sqlFile-example
+    author: Felix
+    changes:
+    - sqlFile:
+        encoding: utf8
+        path: classpath:db/init.sql

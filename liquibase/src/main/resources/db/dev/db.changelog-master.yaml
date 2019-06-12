@@ -1,0 +1,7 @@
+databaseChangeLog:
+    - include:
+        file: db/dev/changelog.create-feedback.yaml
+    - include:
+        file: db/dev/changelog.create-feedback_review.yaml
+    - include:
+        file: db/dev/changelog.db.init.yaml

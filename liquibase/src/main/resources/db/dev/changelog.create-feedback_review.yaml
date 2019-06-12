@@ -1,0 +1,58 @@
+databaseChangeLog:
+- changeSet:
+    id: sqlFile-example
+    author: felix
+    changes:
+    - createTable:
+        tableName: feedbackReview
+        columns:
+        - column:
+            name: id
+            type: bigint
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: feedbackId
+            type: bigint
+            constraints:
+              primaryKey: true
+              references: feedback(id)
+              foreignKeyName: fk_feedback_review_feedback
+              nullable: false
+        - column:
+            name: userId
+            type: bigint
+            remarks: "用户id"
+            constraints:
+              nullable: false
+        - column:
+            name: role
+            type: bigint
+            remarks: "0=用户,1=管理员"
+            constraints:
+              nullable: false
+        - column:
+            name: name
+            type: varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+            constraints:
+              nullable: false
+        - column:
+            name: content
+            type: varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+            remarks: "内容"
+            constraints:
+              nullable: false
+        - column:
+            name: media
+            type: text
+            remarks: "附图"
+        - column:
+            name: createAt
+            type: datetime
+            constraints:
+              nullable: false
+    - modifySql:
+        append:
+          value: "ENGINE=INNODB AUTO_INCREMENT=127 DEFAULT CHARSET=UTF8 COLLATE utf8_unicode_ci"

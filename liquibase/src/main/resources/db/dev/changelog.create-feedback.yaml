@@ -1,0 +1,68 @@
+databaseChangeLog:
+- changeSet:
+    id: sqlFile-example
+    author: felix
+    changes:
+    - createTable:
+        tableName: feedback
+        columns:
+        - column:
+            name: id
+            type: bigint
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              nullable: false
+        - column:
+            name: title
+            type: varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+            remarks: "标题"
+            encoding: 'UTF-8'
+            constraints:
+              nullable: false
+        - column:
+            name: content
+            type: varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+            remarks: "内容"
+            constraints:
+              nullable: false
+        - column:
+            name: media
+            type: text
+            remarks: "附图"
+        - column:
+            name: mobile
+            type: varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci
+            remarks: "手机号"
+            constraints:
+              nullable: false
+        - column:
+            name: type
+            type: bigint
+            remarks: "10=自助售票机，20=微信购票，30=站场问题，40=其他问题"
+            constraints:
+              nullable: false
+        - column:
+            name: userId
+            type: bigint
+            remarks: "用户id"
+            constraints:
+              nullable: false
+        - column:
+            name: status
+            type: tinyint
+            remarks: "0=已读，1=有新回复， 2=待客服反馈 、3=已完成"
+            encoding: 'UTF-8'
+            constraints:
+              nullable: false
+        - column:
+            name: createAt
+            type: datetime
+            constraints:
+              nullable: false
+        - column:
+            name: updateAt
+            type: datetime
+    - modifySql:
+        append:
+          value: "ENGINE=INNODB AUTO_INCREMENT=6655 DEFAULT CHARSET=UTF8 COLLATE utf8_unicode_ci"
