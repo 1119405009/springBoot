@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/log-aop/log-aop.iml" filepath="$PROJECT_DIR$/log-aop/log-aop.iml" />
-      <module fileurl="file://$PROJECT_DIR$/log-log4j2/log-log4j2.iml" filepath="$PROJECT_DIR$/log-log4j2/log-log4j2.iml" />
       <module fileurl="file://$PROJECT_DIR$/parent.iml" filepath="$PROJECT_DIR$/parent.iml" />
     </modules>
   </component>
