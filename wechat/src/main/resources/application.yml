@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+
+wechat :
+  mpAppId : wxf5e7f00571449670
+  mpAppSecret : ce8b8f2776f439fd74e8d5ce41b74173
+  mpToken : felix
+  mpTemlateRefund : XTeof_V8AlAsEPRHerMrxVQBJxRZJQyKyWcFWhNSM7M
+
+
+logging:
+  level:
+    root:  INFO

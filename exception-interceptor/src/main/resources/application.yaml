@@ -1,0 +1,11 @@
+spring:
+  mvc:
+    view:
+      prefix : /
+      suffix : .html
+  resources:
+    static-locations: classpath:/error/,classpath:/static/
+
+
+
+

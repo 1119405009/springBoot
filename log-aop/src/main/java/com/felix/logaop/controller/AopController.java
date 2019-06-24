@@ -11,6 +11,7 @@ public class AopController {
 
     @GetMapping("/test")
     public Dict test(String who) {
+        System.out.println(who);
         return Dict.create().set("who", StrUtil.isBlank(who) ? "me" : who);
     }
 

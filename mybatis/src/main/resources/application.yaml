@@ -22,8 +22,10 @@ logging:
     com.felix.mybatis.mapper: trace
 mybatis:
   configuration:
-    # 下划线转驼峰
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.felix.mybatis.entity
+
+
+
 
