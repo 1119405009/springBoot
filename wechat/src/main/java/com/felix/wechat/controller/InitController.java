@@ -86,7 +86,7 @@ public class InitController {
             WxMpXmlOutMessage outMessage = wxMpMessageRouter.route(inMessage);
             if(outMessage == null) {
                 //为null，说明路由配置有问题，需要注意
-                response.getWriter().write("");
+                return "路由配置有问题";
             }
             response.getWriter().write(outMessage.toEncryptedXml(wxMpConfigStorage));
             return outMessage.toEncryptedXml(wxMpConfigStorage);
